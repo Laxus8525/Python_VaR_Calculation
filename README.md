@@ -15,5 +15,11 @@ Step3:  generate correlation matrix and decomposed the correlation matrix by chl
 Step4: calculate linear weights
 
 Parametric VaR:
-Calculate the mean and standard deviation of portfolio by combining standardized data with linear weights. And calculate VaR = mean + std * standard norm cdf (
+Calculate the mean and standard deviation of portfolio by combining standardized data with linear weights. And calculate VaR = mean + std * standard norm ppf (5%).
+
+Monte Carlo VaR:
+Generate random numbers under uniform distribution which are independent with each other and use inverse norm cdf to convert them to standard normal distribution. Combine the random numbers with the decomposed correlation matrix to get correlated random numbers. Then calculate the stimulated price change of each risk factor. Calculate PnL of the portfolio and sort the results in ascending order. Pick out the position 5% * size of random numbers.
+
+Historical Var:
+Calculate PnL of portfolio using historical daily price change and sorting them in ascending order. Take the position 5% * sample size to picak out VaR. If the position is not int, use Linear interpolate to calculate VaR.
 
