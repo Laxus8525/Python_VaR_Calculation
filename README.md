@@ -7,6 +7,13 @@ The Data file contains the infomation of 1) 1 year historical daily price of fou
 The purpose of this code is to calculate the 1-day 95% parametric/Monte Carlo/historical VaR for the portfolio.
 
 Step1: calculate relative change for stock price and abosulte chnage for Libor and Sofr.
-Step2: calculate the mean and standard deviation of the change
-Step3: standardize the data and generate correlation matrix
-Step4: 
+
+Step2: calculate the mean and standard deviation of the change to standardize the data
+
+Step3:  generate correlation matrix and decomposed the correlation matrix by chloesky decomposition
+
+Step4: calculate linear weights
+
+Parametric VaR:
+Calculate the mean and standard deviation of portfolio by combining standardized data with linear weights. And calculate VaR = mean + std * standard norm cdf (
+
